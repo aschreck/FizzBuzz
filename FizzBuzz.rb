@@ -8,8 +8,10 @@
 #Otherwise print just the number
 
 def fizzbuzzer (number)
-
+#This program uses an empty string word and adds the key phrases to the
+#empty string in order to simplify the if-tree.
 word = ""
+
 	if number % 7 == 0
 		word = "Super"
 	end
@@ -22,13 +24,38 @@ word = ""
 		word = word + "Buzz"
 	end
 
-puts word
+  if word != ""
+		puts word
+	else
+		puts "Not divisible!"
+	end
 
 end
 
-fizzbuzzer (105)
-fizzbuzzer(21)
-fizzbuzzer(15)
-fizzbuzzer(5)
-fizzbuzzer(3)
-fizzbuzzer(7)
+def fizziterator(array)
+
+	array.each do |n|
+		fizzbuzzer(n)
+	end
+end
+
+puts """
+Would you like to FizzBuzz a single number, or an array of 1..1000?
+Answer single or array"""
+print ">"
+
+choice = gets.chomp
+
+if choice == "single"
+	puts "What number would you like to FizzBuzz?"
+	print ">"
+	number = gets.chomp.to_i
+	fizzbuzzer(number)
+
+elsif choice == "array"
+	puts "How big would you like your array to be? Numbers only please!"
+	number = gets.chomp.to_i
+	fizziterator((0..number).to_a)
+else
+	puts "please choose one of the options!"
+end
