@@ -27,7 +27,7 @@ word = ""
   if word != ""
 		puts word
 	else
-		puts "Not divisible!"
+		puts number
 	end
 
 end
