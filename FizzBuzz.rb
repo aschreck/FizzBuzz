@@ -10,7 +10,7 @@
 def fizzbuzzer (number)
 
 word = ""
-	if number % 7 == 0 
+	if number % 7 == 0
 		word = "Super"
 	end
 
@@ -25,3 +25,10 @@ word = ""
 puts word
 
 end
+
+fizzbuzzer (105)
+fizzbuzzer(21)
+fizzbuzzer(15)
+fizzbuzzer(5)
+fizzbuzzer(3)
+fizzbuzzer(7)
